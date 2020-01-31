@@ -18,10 +18,10 @@ function findBy(filter) {
     .first();
 }
 
-async function addUser(user) {
-  user.password = await bcrypt.hash(user.password, 8);
-  const [id] = await db("users").insert(user);
-  return findById(id);
+function addUser(user) {
+  return db("users")
+    .insert(user, "id")
+    .returning("*");
 }
 
 module.exports = {
