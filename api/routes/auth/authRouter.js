@@ -1,18 +1,27 @@
 const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
 const express = require("express");
-const secret = require("../../../secrets/secrets");
-const userMod = require("../../models/users/users-model.js");
 const router = express.Router();
+const userMod = require("../../models/users/users-model");
+const generateToken = require("./generateToken");
 
-router.post("/register", async (req, res, next) => {
-  try {
-    const user = await userMod.addUser(req.body);
-    res.status(200).json(user);
-  } catch (err) {
-    console.log(err);
-    next();
-  }
+router.post("/register", (req, res, next) => {
+  let user = req.body;
+  user.password = bcrypt.hashSync(user.password, 6);
+  userMod
+    .addUser(user)
+    .then(user => {
+      const token = generateToken(user);
+      res.status(201).json({
+        id: user.id,
+        name: user.name,
+        email: user.email,
+        token
+      });
+    })
+    .catch(err => {
+      console.log("reg err", err);
+      next();
+    });
 });
 
 router.post("/login", async (req, res, next) => {
@@ -24,8 +33,8 @@ router.post("/login", async (req, res, next) => {
     if (email && passwordValid) {
       const token = jwt.sign(
         {
-          id: user.id,
-          email: user.email
+          subject: user.id,
+          name: user.name
         },
         secret.jwt,
         { expiresIn: "14d" }
