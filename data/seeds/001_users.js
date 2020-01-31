@@ -1,8 +1,16 @@
 exports.seed = async knex => {
   // Deletes ALL existing entries
-  await knex("users").del();
+  await knex("users").truncate();
   await knex("users").insert([
-    { userName: "Jane", userEmail: "Jane@gmail.com", userPassword: "abcde" },
-    { userName: "Sara", userEmail: "Sara@gmail.com", userPassword: "password" }
+    {
+      name: "Jane",
+      email: "Jane@gmail.com",
+      password: "abcde"
+    },
+    {
+      name: "Sara",
+      email: "Sara@gmail.com",
+      password: "password"
+    }
   ]);
 };
