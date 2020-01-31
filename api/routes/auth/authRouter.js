@@ -23,12 +23,11 @@ router.post("/register", (req, res, next) => {
   userMod
     .addUser(user)
     .then(user => {
-      const token = generateToken(user);
+      // const token = generateToken(user);
       res.status(201).json({
         id: user.id,
         name: user.name,
-        email: user.email,
-        token
+        email: user.email
       });
     })
     .catch(err => {
