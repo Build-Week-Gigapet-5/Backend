@@ -45,6 +45,10 @@ https://gigapet5.herokuapp.com/auth/register
 
 ### User Login (POST)
 
+https://gigapet5.herokuapp.com/auth/login
+
+### Parameters
+
 | Name     | Type   | Description                              |
 | :------- | :----- | :--------------------------------------- |
 | email    | String | <p>The New Users email \*Required</p>    |
