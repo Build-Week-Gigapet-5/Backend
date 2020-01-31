@@ -18,6 +18,7 @@ function findBy(filter) {
     .select()
     .first();
 }
+
 function addUser(user) {
   return db("users")
     .insert(user, "id")
@@ -26,10 +27,6 @@ function addUser(user) {
       return findById(id);
     });
 }
-// async function addUser(user) {
-//   const [id] = await db("users").insert(user, "id");
-//   return findById(id);
-// }
 
 module.exports = {
   find,
