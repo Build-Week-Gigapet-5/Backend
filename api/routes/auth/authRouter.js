@@ -32,32 +32,29 @@ router.post("/register", (req, res, next) => {
       });
     })
     .catch(err => {
+      console.log(err, "register error");
       res.status(400).json({ message: "Something went wrong saving new user" });
       next();
     });
 });
 
-router.post("/login", async (req, res, next) => {
-  try {
-    const { email, password } = req.body;
-    const user = await userMod.findBy({ email }).first();
-    const passwordValid = await bcrypt.compare(password, user.password);
+router.post("/login", (req, res, next) => {
+  let { email, password } = req.body;
 
-    if (email && passwordValid) {
-      const token = jwt.sign(
-        {
-          subject: user.id,
-          name: user.name
-        },
-        secret.jwt,
-        { expiresIn: "14d" }
-      );
-      res.status(200).json({ token, message: `Welcome to Gigpet` });
-    } else {
-      res.status(401).json({ message: "invalid credentials" });
-    }
-  } catch (err) {
-    next();
-  }
+  userMod
+    .findBy({ email })
+    .first()
+    .then(user => {
+      if (user && bcrypt.compareSync(password, user.password)) {
+        const token = generateToken(user);
+        res.status(200).json({ token, message: `Welcome to Gigpet` });
+      } else {
+        res.status(401).json({ message: "invalid credentials" });
+      }
+    })
+    .catch(err => {
+      res.status(500).json(err);
+    });
 });
+
 module.exports = router;
