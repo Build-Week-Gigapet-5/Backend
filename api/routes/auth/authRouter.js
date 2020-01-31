@@ -32,7 +32,7 @@ router.post("/register", (req, res, next) => {
       });
     })
     .catch(err => {
-      console.log("reg err", err);
+      res.status(400).json({ message: "Something went wrong saving new user" });
       next();
     });
 });
