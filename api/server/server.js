@@ -9,7 +9,7 @@ server.use(helmet());
 server.use(cors());
 server.use(express.json());
 
-server.use("/api/auth/", userRouter);
+server.use("/api/auth", userRouter);
 
 server.get("/", (req, res, next) => {
   res.status(200).json({ Message: "Welcome to Gigapet" });
