@@ -26,20 +26,25 @@ https://gigapet5.herokuapp.com/auth/register
 | email    | String | <p>The New Users email \*Required</p>    |
 | password | String | <p>The New Users password \*Required</p> |
 
-#####Client sends:
+##### Client sends:
 
+```
 {
 "name": "ginger",
 "email": "ginger@gmail.com",
 "password":"password"
 }
+```
 
-#####Server returns:
+##### Server returns:
+
+```
 {
 "id": 18,
 "name": "ginger",
 "email": "ginger@gmail.com"
 }
+```
 
 ---
 
@@ -54,16 +59,20 @@ https://gigapet5.herokuapp.com/auth/login
 | email    | String | <p>The New Users email \*Required</p>    |
 | password | String | <p>The New Users password \*Required</p> |
 
-#####Client sends:
+##### Client sends:
 
+```
 {
 "email": "ginger@gmail.com",
 "password":"password"
 }
+```
 
-#####Server returns:
+##### Server returns:
 
+```
 {
 "token": "Very long token",
 "message": "Welcome to Gigpet"
 }
+```
