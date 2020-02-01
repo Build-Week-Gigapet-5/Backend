@@ -14,4 +14,17 @@ router.get("/", (req, res, next) => {
     });
 });
 
+router.get("/:id", (req, res, next) => {
+  const id = req.params.id;
+  userMod
+    .findChildById(id)
+    .then(child => {
+      res.status(200).json(child);
+    })
+    .catch(err => {
+      console.log(err);
+      next();
+    });
+});
+
 module.exports = router;

@@ -4,19 +4,6 @@ const router = express.Router();
 const userMod = require("../../models/users-model.js");
 const generateToken = require("./generateToken");
 
-// using to test
-
-router.get("/users", (req, res) => {
-  userMod
-    .find()
-    .then(users => {
-      res.status(200).json(users);
-    })
-    .catch(err => {
-      res.status(500).json({ message: "Failed to retrieve recipes" });
-    });
-});
-
 router.post("/register", (req, res, next) => {
   let user = req.body;
   user.password = bcrypt.hashSync(user.password, 6);
