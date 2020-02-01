@@ -50,9 +50,6 @@ exports.up = async function(knex) {
       .inTable("children")
       .onDelete("CASCADE")
       .onUpdate("CASCADE");
-  });
-
-  await knex.schema.createTable("category_foods", tbl => {
     tbl
       .integer("category_id")
       .notNullable()
@@ -60,21 +57,12 @@ exports.up = async function(knex) {
       .inTable("categories")
       .onDelete("CASCADE")
       .onUpdate("CASCADE");
-    tbl
-      .integer("food_id")
-      .notNullable()
-      .references("id")
-      .inTable("foods")
-      .onDelete("CASCADE")
-      .onUpdate("CASCADE");
-    tbl.primary(["category_id", "food_id"]);
   });
 };
 
 exports.down = async function(knex) {
-  await knex.schema.dropTableIfExists("users");
-  await knex.schema.dropTableIfExists("children");
-  await knex.schema.dropTableIfExists("categories");
   await knex.schema.dropTableIfExists("foods");
-  await knex.schema.dropTableIfExists("category_foods");
+  await knex.schema.dropTableIfExists("categories");
+  await knex.schema.dropTableIfExists("children");
+  await knex.schema.dropTableIfExists("users");
 };

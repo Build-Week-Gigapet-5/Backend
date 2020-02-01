@@ -9,6 +9,21 @@ exports.seed = async knex => {
       name: "Sara",
       email: "Sara@gmail.com",
       password: "password"
+    },
+    {
+      name: "Mike",
+      email: "Mike@gmail.com",
+      password: "password"
+    },
+    {
+      name: "Jerry",
+      email: "Jerry@gmail.com",
+      password: "password"
+    },
+    {
+      name: "Ann",
+      email: "Ann@gmail.com",
+      password: "password"
     }
   ]);
 };
