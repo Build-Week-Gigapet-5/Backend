@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const userMod = require("../../models/users-model.js");
 
+// * LH and Heroku works
 router.get("/", (req, res) => {
   userMod
     .find()
@@ -13,6 +14,7 @@ router.get("/", (req, res) => {
     });
 });
 
+// * LH and Heroku works
 router.get("/:id", (req, res, next) => {
   const id = req.params.id;
   userMod
@@ -25,6 +27,8 @@ router.get("/:id", (req, res, next) => {
       next();
     });
 });
+
+// ! Only works on Localhost, not Heroku
 
 router.get("/:id/children", (req, res, next) => {
   const { id } = req.params;

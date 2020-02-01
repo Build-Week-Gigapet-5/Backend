@@ -4,6 +4,7 @@ const router = express.Router();
 const userMod = require("../../models/users-model.js");
 const generateToken = require("./generateToken");
 
+// * Works on LH and Heroku
 router.post("/register", (req, res, next) => {
   let user = req.body;
   user.password = bcrypt.hashSync(user.password, 6);
@@ -24,6 +25,7 @@ router.post("/register", (req, res, next) => {
     });
 });
 
+// * Works on LH and Heroku
 router.post("/login", (req, res, next) => {
   let { email, password } = req.body;
 
