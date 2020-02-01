@@ -25,15 +25,6 @@ function addUser(user) {
       return findById(id);
     });
 }
-function findChildren() {
-  return db("children").select();
-}
-
-function findChildById(id) {
-  return db("children")
-    .where({ id })
-    .first();
-}
 
 function findChildrenByUserId(users_id) {
   return db("children as ch")
@@ -42,12 +33,12 @@ function findChildrenByUserId(users_id) {
     .select("ch.id", "ch.child_name", "ch.child_age", "u.name", "u.id");
 }
 
+// adding to test something with push
+
 module.exports = {
   find,
   findById,
   findBy,
   addUser,
-  findChildren,
-  findChildById,
   findChildrenByUserId
 };

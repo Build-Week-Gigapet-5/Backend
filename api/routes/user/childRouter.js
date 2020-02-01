@@ -1,9 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const userMod = require("../../models/users-model.js");
+const childMod = require("../../models/children-model.js");
 
+// * Works on LH
+//! Not on Heroku
 router.get("/", (req, res, next) => {
-  userMod
+  childMod
     .findChildren()
     .then(children => {
       res.status(200).json(children);
@@ -14,9 +16,11 @@ router.get("/", (req, res, next) => {
     });
 });
 
+// * Works on LH
+//! Not on Heroku
 router.get("/:id", (req, res, next) => {
   const id = req.params.id;
-  userMod
+  childMod
     .findChildById(id)
     .then(child => {
       res.status(200).json(child);

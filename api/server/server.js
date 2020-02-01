@@ -13,7 +13,7 @@ server.use(express.json());
 
 server.use("/auth", authRouter);
 server.use("/auth/users", userRouter);
-server.use("/auth/child", childRouter);
+server.use("/auth/children", childRouter);
 
 server.get("/", (req, res, next) => {
   res.status(200).json({ Message: "Welcome to Gigapet" });
