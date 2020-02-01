@@ -15,18 +15,6 @@ router.get("/:id", (req, res, next) => {
     });
 });
 
-router.get("/children", (req, res, next) => {
-  userMod
-    .findChildren()
-    .then(children => {
-      res.status(200).json(children);
-    })
-    .catch(err => {
-      console.log(err);
-      next();
-    });
-});
-
 router.get("/:id/children", (req, res, next) => {
   const { id } = req.params;
   userMod

@@ -3,6 +3,7 @@ const cors = require("cors");
 const helmet = require("helmet");
 const authRouter = require("../routes/auth/authRouter");
 const userRouter = require("../routes/user/userRoute");
+const childRouter = require("../routes/user/childRouter");
 
 const server = express();
 
@@ -12,6 +13,7 @@ server.use(express.json());
 
 server.use("/auth", authRouter);
 server.use("/auth/users", userRouter);
+server.use("/auth/child", childRouter);
 
 server.get("/", (req, res, next) => {
   res.status(200).json({ Message: "Welcome to Gigapet" });
