@@ -37,7 +37,7 @@ function findChildById(id) {
 
 function findChildrenByUserId(users_id) {
   return db("children as ch")
-    .join("users as u", "ch.users_id", "u.id")
+    .innerJoin("users as u", "ch.users_id", "u.id")
     .where({ users_id })
     .select("ch.id", "ch.child_name", "ch.child_age", "u.name", "u.id");
 }
