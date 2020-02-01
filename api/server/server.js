@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const helmet = require("helmet");
 const authRouter = require("../routes/auth/authRouter");
+const userRouter = require("../routes/user/userRoute");
 
 const server = express();
 
@@ -10,6 +11,7 @@ server.use(cors());
 server.use(express.json());
 
 server.use("/auth", authRouter);
+server.use("/auth/users", userRouter);
 
 server.get("/", (req, res, next) => {
   res.status(200).json({ Message: "Welcome to Gigapet" });
