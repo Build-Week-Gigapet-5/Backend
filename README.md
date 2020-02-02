@@ -87,35 +87,6 @@ https://gigapet5.herokuapp.com/auth/login
 }
 ```
 
-### User GET ALL USERS (GET)
-
-https://gigapet5.herokuapp.com/auth/users
-
-### Parameters
-
-| Name     | Type   | Description                              |
-| :------- | :----- | :--------------------------------------- |
-| email    | String | <p>The New Users email \*Required</p>    |
-| password | String | <p>The New Users password \*Required</p> |
-
-##### Client sends:
-
-```
-{
-"email": "megan@gmail.com",
-"password":"password"
-}
-```
-
-##### Server returns:
-
-```
-{
-    "message": "Welcome Megan to Gigpet",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0Ijo2LCJuYW1lIjoiTWVnYW4iLCJpYXQiOjE1ODA2NjE5OTMsImV4cCI6MTU4MTA5Mzk5M30.UbyzaZAhwi6-kupEL-0HARA9t6iNTd3LR6vVMcgdPjA"
-}
-```
-
 ### ADD CHILD (POST)
 
 https://gigapet5.herokuapp.com/auth/children/addChild
