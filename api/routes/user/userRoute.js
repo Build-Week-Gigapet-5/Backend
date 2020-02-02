@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const userMod = require("../../models/users-model.js");
-
+const restricted = require("../../middleware/auth-user-middleware");
 // * LH and Heroku works
 router.get("/", (req, res) => {
   userMod
@@ -15,20 +15,29 @@ router.get("/", (req, res) => {
 });
 
 // * LH and Heroku works
-router.get("/:id", (req, res, next) => {
-  const id = req.params.id;
-  userMod
-    .findById(id)
-    .then(user => {
-      res.status(200).json(user);
-    })
-    .catch(err => {
-      console.log(err);
-      next();
-    });
-});
+// router.get("/:id", restricted(), (req, res, next) => {
+//   const id = req.params.id;
+//   userMod
+//     .findById(id)
+//     .then(user => {
+//       res.status(200).json(user);
+//     })
+//     .catch(err => {
+//       console.log(err);
+//       next();
+//     });
+// });
 
-// ! Only works on Localhost, not Heroku
+router.get("/:id", async (req, res, next) => {
+  try {
+    const id = req.params.id;
+    const user = await userMod.findById(id);
+    res.status(200).json({ message: `Welcome ${user.name}`, user });
+  } catch (err) {
+    console.log(err);
+    next();
+  }
+});
 
 router.get("/:id/children", (req, res, next) => {
   const { id } = req.params;

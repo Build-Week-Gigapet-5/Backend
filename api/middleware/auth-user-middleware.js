@@ -7,13 +7,17 @@ module.exports = (req, res, next) => {
   if (token) {
     jwt.verify(token, secrets.JWT_SECRET, (err, decodedToken) => {
       if (err) {
-        res.status(401).json({ message: "Invalid login or token expired" });
+        res.status(401).json({ message: "Bad one!" });
       } else {
-        req.decodedToken = decodedToken;
-        next();
+        if (decodedToken.type === "user") {
+          req.name = decodedToken;
+          next();
+        } else {
+          res.status(400).json({ message: "Wrong user type" });
+        }
       }
     });
   } else {
-    res.status(401).json({ message: "No credentials provided!" });
+    res.status(400).json({ message: "No credentials provided" });
   }
 };
