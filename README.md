@@ -89,7 +89,7 @@ https://gigapet5.herokuapp.com/auth/login
 
 ### ADD CHILD (POST)
 
-https://gigapet5.herokuapp.com/auth/children/addChild
+https://gigapet5.herokuapp.com/auth/users/addChild
 
 ### Parameters
 
