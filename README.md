@@ -10,6 +10,18 @@ BASE URL: https://gigapet5.herokuapp.com/
 
 ---
 
+#### API
+
+The following endpoints are available.
+
+- `GET https://gigapet5.herokuapp.com/auth/users` - gets master list of users(parent)
+- `GET https://gigapet5.herokuapp.com/auth/users/:id` - gets a single user(parent)
+- `GET https://gigapet5.herokuapp.com/auth/users/:id/children` - gets all the children for that user(parent)
+- `GET https://gigapet5.herokuapp.com/auth/children` -gets all children in database
+- `GET https://gigapet5.herokuapp.com/auth/children/:id` - Gets child by (child) id
+
+---
+
 ## REGISTRATION & LOGIN (Parent/user)
 
 ### User Registration (POST)
@@ -49,6 +61,35 @@ https://gigapet5.herokuapp.com/auth/register
 ### User Login (POST)
 
 https://gigapet5.herokuapp.com/auth/login
+
+### Parameters
+
+| Name     | Type   | Description                              |
+| :------- | :----- | :--------------------------------------- |
+| email    | String | <p>The New Users email \*Required</p>    |
+| password | String | <p>The New Users password \*Required</p> |
+
+##### Client sends:
+
+```
+{
+"email": "megan@gmail.com",
+"password":"password"
+}
+```
+
+##### Server returns:
+
+```
+{
+    "message": "Welcome Megan to Gigpet",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0Ijo2LCJuYW1lIjoiTWVnYW4iLCJpYXQiOjE1ODA2NjE5OTMsImV4cCI6MTU4MTA5Mzk5M30.UbyzaZAhwi6-kupEL-0HARA9t6iNTd3LR6vVMcgdPjA"
+}
+```
+
+### User GET ALL USERS (GET)
+
+https://gigapet5.herokuapp.com/auth/users
 
 ### Parameters
 
