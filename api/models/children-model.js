@@ -10,4 +10,12 @@ function findChildById(id) {
     .first();
 }
 
-module.exports = { findChildren, findChildById };
+function addChild(child, id) {
+  return db("children")
+    .insert(child)
+    .then(ids => {
+      ({ id: ids[0] });
+    });
+}
+
+module.exports = { findChildren, findChildById, addChild };

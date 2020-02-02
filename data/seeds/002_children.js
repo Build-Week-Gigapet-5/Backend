@@ -1,4 +1,5 @@
 exports.seed = async knex => {
+  await knex("children").del();
   await knex("children").insert([
     {
       child_name: "Ben",
