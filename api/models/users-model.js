@@ -33,8 +33,6 @@ function findChildrenByUserId(users_id) {
     .select("ch.id", "ch.child_name", "ch.child_age", "u.name", "u.id");
 }
 
-// adding to test something with push
-
 module.exports = {
   find,
   findById,
