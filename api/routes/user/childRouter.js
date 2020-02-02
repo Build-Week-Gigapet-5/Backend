@@ -26,17 +26,17 @@ router.get("/:id", async (req, res, next) => {
 });
 
 // * WORKs Add child
-router.post("/addChild", (req, res, next) => {
-  const child = req.body;
-  childMod
-    .addChild(child)
-    .then(childData => {
-      res.status(201).json({ message: "New child added", childData });
-    })
-    .catch(err => {
-      console.log(err);
-      next();
-    });
-});
+// router.post("/addChild", (req, res, next) => {
+//   const child = req.body;
+//   childMod
+//     .addChild(child)
+//     .then(childData => {
+//       res.status(201).json({ message: "New child added", childData });
+//     })
+//     .catch(err => {
+//       console.log(err);
+//       next();
+//     });
+// });
 
 module.exports = router;

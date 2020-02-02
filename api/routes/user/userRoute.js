@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const userMod = require("../../models/users-model.js");
+const childMod = require("../../models/children-model");
 const restricted = require("../../middleware/auth-user-middleware");
 
 // * Works Get all users (Parents)
@@ -37,4 +38,18 @@ router.get("/:id/children", async (req, res, next) => {
     next();
   }
 });
+
+router.post("/addChild", (req, res, next) => {
+  const child = req.body;
+  childMod
+    .addChild(child)
+    .then(childData => {
+      res.status(201).json({ message: "New child added", childData });
+    })
+    .catch(err => {
+      console.log(err);
+      next();
+    });
+});
+
 module.exports = router;
