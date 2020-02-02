@@ -32,7 +32,7 @@ router.get("/:id", async (req, res, next) => {
   try {
     const id = req.params.id;
     const user = await userMod.findById(id);
-    res.status(200).json({ message: `Welcome ${user.name}`, user });
+    res.status(200).json(user);
   } catch (err) {
     console.log(err);
     next();
