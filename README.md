@@ -61,7 +61,7 @@ https://gigapet5.herokuapp.com/auth/login
 
 ```
 {
-"email": "ginger@gmail.com",
+"email": "megan@gmail.com",
 "password":"password"
 }
 ```
@@ -70,7 +70,7 @@ https://gigapet5.herokuapp.com/auth/login
 
 ```
 {
-"token": "Very long token",
-"message": "Welcome to Gigpet"
+    "message": "Welcome Megan to Gigpet",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0Ijo2LCJuYW1lIjoiTWVnYW4iLCJpYXQiOjE1ODA2NjE5OTMsImV4cCI6MTU4MTA5Mzk5M30.UbyzaZAhwi6-kupEL-0HARA9t6iNTd3LR6vVMcgdPjA"
 }
 ```
