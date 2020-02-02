@@ -25,6 +25,7 @@ router.get("/:id", async (req, res, next) => {
   }
 });
 
+// * WORKs Add child
 router.post("/addChild", (req, res, next) => {
   const child = req.body;
   childMod
