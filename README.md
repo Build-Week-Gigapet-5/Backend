@@ -21,6 +21,7 @@ The following endpoints are available.
 - `GET https://gigapetfive.herokuapp.com/auth/children/:id` - Gets child by (child) id(Restricted access)
 
 - `GET https://gigapetfive.herokuapp.com/auth/food` - Gets all Food
+- `GET https://gigapetfive.herokuapp.com/auth/food/categories` - Gets all Categories
 
 ---
 
@@ -230,6 +231,47 @@ https://gigapetfive.herokuapp.com/auth/children/:id/food (Id is children_id)
         "date": "2015-08-07T00:00:00.000Z",
         "children_id": 3,
         "category_id": 1
+    }
+]
+```
+
+### Get All Categories (GET)
+
+https://gigapetfive.herokuapp.com/auth/food/categories
+
+##### Server returns:
+
+```
+[
+    {
+        "id": 1,
+        "category_name": "Vegetable",
+        "category_points": 5
+    },
+    {
+        "id": 2,
+        "category_name": "Fruits",
+        "category_points": 5
+    },
+    {
+        "id": 3,
+        "category_name": "Protein",
+        "category_points": 2
+    },
+    {
+        "id": 4,
+        "category_name": "Grains",
+        "category_points": 2
+    },
+    {
+        "id": 5,
+        "category_name": "Dairy",
+        "category_points": 3
+    },
+    {
+        "id": 6,
+        "category_name": "Snacks",
+        "category_points": 0
     }
 ]
 ```
