@@ -9,7 +9,7 @@ module.exports = () => {
       req.user = decoded.id;
       next();
     } catch (err) {
-      res.status(401).json({ you: "Invalid credentials!" });
+      res.status(401).json({ Message: "Invalid credentials!" });
     }
   };
 };

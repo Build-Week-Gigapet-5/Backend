@@ -12,6 +12,16 @@ router.get("/", async (req, res, next) => {
   }
 });
 
+router.get("/categories", async (req, res, next) => {
+  try {
+    const categories = await foodMod.getCategories();
+    res.status(200).json(categories);
+  } catch (err) {
+    console.log(err);
+    next();
+  }
+});
+
 router.post("/addFood", async (req, res, next) => {
   try {
     const { food_name, qty, date, children_id, category_id } = req.body;
