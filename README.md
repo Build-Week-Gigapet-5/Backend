@@ -152,3 +152,49 @@ https://gigapetfive.herokuapp.com/auth/food/addFood
     "message": "Cinnamon roll added!"
 }
 ```
+
+### EDIT Food (PUT) (Requires user Token)
+
+https://gigapetfive.herokuapp.com/auth/food/:id (Id is food id)
+
+### Parameters
+
+| Name        | Type       | Description                             |
+| :---------- | :--------- | :-------------------------------------- |
+| food_name   | String     | <p>The childs name \*Required</p>       |
+| qty         | integer    | <p>The childs age \*Optional </p>       |
+| date        | YYYY-MM-DD | <p>Parents ID (users_id )\*Required</p> |
+| children_id | integer    | <p>Parents ID (users_id )\*Required</p> |
+| category_id | integer    | <p>Parents ID (users_id )\*Required</p> |
+
+##### Client sends:
+
+```
+{
+        "food_name": "Cinnamon roll",
+        "qty": 1,
+        "date": "2015-03-07",
+        "children_id": 1,
+        "category_id": 6
+    }
+```
+
+##### Server returns:
+
+```
+{
+    "message": "Food record Updated"
+}
+```
+
+### Remove Food (delete) (Requires user Token)
+
+https://gigapetfive.herokuapp.com/auth/food/:id (Id is food id)
+
+##### Server returns:
+
+```
+{
+    "message": "Food record removed"
+}
+```
