@@ -6,7 +6,6 @@ exports.seed = async knex => {
       qty: 1,
       // date format YYYY-MM-DD
       date: "2015-03-06",
-      users_id: 1,
       children_id: 1,
       category_id: 4
     },
@@ -15,7 +14,6 @@ exports.seed = async knex => {
       qty: 1,
       // date format YYYY-MM-DD
       date: "2015-03-07",
-      users_id: 1,
       children_id: 1,
       category_id: 2
     },
@@ -24,7 +22,6 @@ exports.seed = async knex => {
       qty: 1,
       // date format YYYY-MM-DD
       date: "2015-04-06",
-      users_id: 2,
       children_id: 3,
       category_id: 3
     },
@@ -33,7 +30,6 @@ exports.seed = async knex => {
       qty: 1,
       // date format YYYY-MM-DD
       date: "2015-04-06",
-      users_id: 2,
       children_id: 3,
       category_id: 5
     },
@@ -42,7 +38,6 @@ exports.seed = async knex => {
       qty: 1,
       // date format YYYY-MM-DD
       date: "2015-04-07",
-      users_id: 2,
       children_id: 3,
       category_id: 6
     },
@@ -51,7 +46,6 @@ exports.seed = async knex => {
       qty: 1,
       // date format YYYY-MM-DD
       date: "2015-08-07",
-      users_id: 2,
       children_id: 3,
       category_id: 1
     }

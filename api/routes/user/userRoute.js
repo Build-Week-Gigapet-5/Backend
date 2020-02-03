@@ -39,20 +39,6 @@ router.get("/:id/children", restricted(), async (req, res, next) => {
   }
 });
 
-// // ! Destructure dummy :) to use async... more then one need to specify.
-// router.post("/addChild", (req, res, next) => {
-//   const child = req.body;
-//   childMod
-//     .addChild(child)
-//     .then(childData => {
-//       res.status(201).json({ message: "New child added", childData });
-//     })
-//     .catch(err => {
-//       console.log(err);
-//       next();
-//     });
-// });
-
 router.post("/addChild", restricted(), async (req, res, next) => {
   const { child_name, users_id } = req.body;
   try {
@@ -66,4 +52,5 @@ router.post("/addChild", restricted(), async (req, res, next) => {
     next(err);
   }
 });
+
 module.exports = router;
