@@ -1,12 +1,5 @@
 const db = require("../../data/db.config");
 
-// async function addFood(food, id) {
-//   const [id] = await db("foods").insert(food);
-//   return db("foods")
-//     .where({ id })
-//     .first();
-// }
-
 function addFood(food, id) {
   return db("foods")
     .insert(food)
