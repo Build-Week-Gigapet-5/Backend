@@ -1,5 +1,5 @@
 const db = require("../../data/db.config");
-// const bcrypt = require("bcryptjs");
+const bcrypt = require("bcryptjs");
 
 function find() {
   return db("users").select("id", "name", "email");
@@ -18,7 +18,8 @@ function findBy(filter) {
     .first();
 }
 
-function addUser(user) {
+async function addUser(user) {
+  user.password = await bcrypt.hash(user.password, 5);
   return db("users")
     .insert(user, "id")
     .then(ids => {

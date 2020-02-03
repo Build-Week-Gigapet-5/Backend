@@ -5,7 +5,7 @@ const childMod = require("../../models/children-model");
 const restricted = require("../../middleware/auth-user-middleware");
 
 // * Works Get all users (Parents)
-router.get("/", async (req, res, next) => {
+router.get("/", restricted(), async (req, res, next) => {
   try {
     const users = await userMod.find();
     res.status(200).json(users);
@@ -16,7 +16,7 @@ router.get("/", async (req, res, next) => {
 });
 
 //* Work Get user(parent) by ID
-router.get("/:id", async (req, res, next) => {
+router.get("/:id", restricted(), async (req, res, next) => {
   try {
     const id = req.params.id;
     const user = await userMod.findById(id);
@@ -28,7 +28,7 @@ router.get("/:id", async (req, res, next) => {
 });
 
 // * Works Get children of user(parent)
-router.get("/:id/children", async (req, res, next) => {
+router.get("/:id/children", restricted(), async (req, res, next) => {
   try {
     const { id } = req.params;
     const children = await userMod.findChildrenByUserId(id);
@@ -39,17 +39,18 @@ router.get("/:id/children", async (req, res, next) => {
   }
 });
 
-router.post("/addChild", (req, res, next) => {
-  const child = req.body;
-  childMod
-    .addChild(child)
-    .then(childData => {
-      res.status(201).json({ message: "New child added", childData });
-    })
-    .catch(err => {
-      console.log(err);
-      next();
-    });
+router.post("/addChild", restricted(), async (req, res, next) => {
+  const { child_name, users_id } = req.body;
+  try {
+    if (!child_name || !users_id) {
+      res.status(400).json({ message: "Information is missing" });
+    } else {
+      const child = await childMod.addChild(req.body);
+      res.status(201).json({ message: `${child_name} has been added!` });
+    }
+  } catch (err) {
+    next(err);
+  }
 });
 
 module.exports = router;

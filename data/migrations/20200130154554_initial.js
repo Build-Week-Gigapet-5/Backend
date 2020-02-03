@@ -37,13 +37,6 @@ exports.up = async function(knex) {
     tbl.integer("qty").notNullable();
     tbl.date("date").notNullable();
     tbl
-      .integer("users_id")
-      .notNullable()
-      .references("id")
-      .inTable("users")
-      .onDelete("CASCADE")
-      .onUpdate("CASCADE");
-    tbl
       .integer("children_id")
       .notNullable()
       .references("id")
