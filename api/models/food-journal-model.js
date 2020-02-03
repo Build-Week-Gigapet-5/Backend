@@ -15,10 +15,17 @@ function getByChildId(id) {
   return db("foods").where("child_id", id);
 }
 
-async function updateFood(food, id) {
+function findById(id) {
+  return db("foods")
+    .where({ id })
+    .first();
+}
+
+async function updateFood(id, food) {
   await db("foods")
     .where({ id })
     .update(food);
+  return findById(id);
 }
 
 function removeFood(id) {

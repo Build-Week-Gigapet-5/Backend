@@ -14,11 +14,11 @@ BASE URL: https://gigapet5.herokuapp.com/
 
 The following endpoints are available.
 
-- `GET https://gigapet5.herokuapp.com/auth/users` - gets master list of users(parent)
-- `GET https://gigapet5.herokuapp.com/auth/users/:id` - gets a single user(parent)
-- `GET https://gigapet5.herokuapp.com/auth/users/:id/children` - gets all the children for that user(parent)
-- `GET https://gigapet5.herokuapp.com/auth/children` -gets all children in database
-- `GET https://gigapet5.herokuapp.com/auth/children/:id` - Gets child by (child) id
+- `GET https://gigapet5.herokuapp.com/auth/users` - gets master list of users(Restricted access)
+- `GET https://gigapet5.herokuapp.com/auth/users/:id` - gets a single user(Restricted access)
+- `GET https://gigapet5.herokuapp.com/auth/users/:id/children` - gets all the children for that user(Restricted access)
+- `GET https://gigapet5.herokuapp.com/auth/children` -gets all children in database(Restricted access)
+- `GET https://gigapet5.herokuapp.com/auth/children/:id` - Gets child by (child) id(Restricted access)
 
 ---
 
@@ -87,7 +87,7 @@ https://gigapet5.herokuapp.com/auth/login
 }
 ```
 
-### ADD CHILD (POST)
+### ADD CHILD (POST) (Requires user Token)
 
 https://gigapet5.herokuapp.com/auth/users/addChild
 
