@@ -125,13 +125,13 @@ https://gigapetfive.herokuapp.com/auth/food/addFood
 
 ### Parameters
 
-| Name        | Type       | Description                             |
-| :---------- | :--------- | :-------------------------------------- |
-| food_name   | String     | <p>The childs name \*Required</p>       |
-| qty         | integer    | <p>The childs age \*Optional </p>       |
-| date        | YYYY-MM-DD | <p>Parents ID (users_id )\*Required</p> |
-| children_id | integer    | <p>Parents ID (users_id )\*Required</p> |
-| category_id | integer    | <p>Parents ID (users_id )\*Required</p> |
+| Name        | Type    | Description                                 |
+| :---------- | :------ | :------------------------------------------ |
+| food_name   | String  | <p>The Food name \*Required</p>             |
+| qty         | integer | <p>Qty of food \*Required </p>              |
+| date        | String  | <p>YYYY-MM-DD \*Required</p>                |
+| children_id | integer | <p>Childs ID (children_id )\*Required</p>   |
+| category_id | integer | <p>Category ID (category_id )\*Required</p> |
 
 ##### Client sends:
 
@@ -159,13 +159,13 @@ https://gigapetfive.herokuapp.com/auth/food/:id (Id is food id)
 
 ### Parameters
 
-| Name        | Type       | Description                             |
-| :---------- | :--------- | :-------------------------------------- |
-| food_name   | String     | <p>The childs name \*Required</p>       |
-| qty         | integer    | <p>The childs age \*Optional </p>       |
-| date        | YYYY-MM-DD | <p>Parents ID (users_id )\*Required</p> |
-| children_id | integer    | <p>Parents ID (users_id )\*Required</p> |
-| category_id | integer    | <p>Parents ID (users_id )\*Required</p> |
+| Name        | Type    | Description                                 |
+| :---------- | :------ | :------------------------------------------ |
+| food_name   | String  | <p>The Food name \*Required</p>             |
+| qty         | integer | <p>Qty of food \*Required </p>              |
+| date        | String  | <p>YYYY-MM-DD \*Required</p>                |
+| children_id | integer | <p>Childs ID (children_id )\*Required</p>   |
+| category_id | integer | <p>Category ID (category_id )\*Required</p> |
 
 ##### Client sends:
 
