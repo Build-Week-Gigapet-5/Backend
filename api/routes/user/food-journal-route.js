@@ -40,8 +40,7 @@ router.put("/:id", async (req, res, next) => {
     const { id } = req.params;
     const edit = await foodMod.updateFood(id, req.body);
     res.status(201).json({
-      message: "Food record Updated",
-      edit
+      message: "Food record Updated"
     });
   } catch (err) {
     console.log("edit food", err);

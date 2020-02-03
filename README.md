@@ -20,6 +20,8 @@ The following endpoints are available.
 - `GET https://gigapetfive.herokuapp.com/auth/children` -gets all children in database(Restricted access)
 - `GET https://gigapetfive.herokuapp.com/auth/children/:id` - Gets child by (child) id(Restricted access)
 
+- `GET https://gigapetfive.herokuapp.com/auth/food` - Gets all Food
+
 ---
 
 ## REGISTRATION & LOGIN (Parent/user)
@@ -114,5 +116,39 @@ https://gigapetfive.herokuapp.com/auth/users/addChild
 ```
 {
     "message": "New child added"
+}
+```
+
+### ADD Food (POST) (Requires user Token)
+
+https://gigapetfive.herokuapp.com/auth/food/addFood
+
+### Parameters
+
+| Name        | Type       | Description                             |
+| :---------- | :--------- | :-------------------------------------- |
+| food_name   | String     | <p>The childs name \*Required</p>       |
+| qty         | integer    | <p>The childs age \*Optional </p>       |
+| date        | YYYY-MM-DD | <p>Parents ID (users_id )\*Required</p> |
+| children_id | integer    | <p>Parents ID (users_id )\*Required</p> |
+| category_id | integer    | <p>Parents ID (users_id )\*Required</p> |
+
+##### Client sends:
+
+```
+{
+        "food_name": "Cinnamon roll",
+        "qty": 1,
+        "date": "2015-03-07",
+        "children_id": 1,
+        "category_id": 6
+    }
+```
+
+##### Server returns:
+
+```
+{
+    "message": "Cinnamon roll added!"
 }
 ```
