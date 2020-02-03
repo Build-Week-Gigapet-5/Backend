@@ -198,3 +198,38 @@ https://gigapetfive.herokuapp.com/auth/food/:id (Id is food id)
     "message": "Food record removed"
 }
 ```
+
+### Get Food By Childs ID (GET) (Requires user Token)
+
+https://gigapetfive.herokuapp.com/auth/children/:id/food (Id is children_id)
+
+##### Server returns:
+
+```
+[
+    {
+        "id": 3,
+        "food_name": "Chicken Nuggets",
+        "qty": 1,
+        "date": "2015-04-06T00:00:00.000Z",
+        "children_id": 3,
+        "category_id": 3
+    },
+    {
+        "id": 4,
+        "food_name": "Mac and Cheese",
+        "qty": 1,
+        "date": "2015-04-06T00:00:00.000Z",
+        "children_id": 3,
+        "category_id": 5
+    },
+    {
+        "id": 6,
+        "food_name": "Broccoli",
+        "qty": 1,
+        "date": "2015-08-07T00:00:00.000Z",
+        "children_id": 3,
+        "category_id": 1
+    }
+]
+```

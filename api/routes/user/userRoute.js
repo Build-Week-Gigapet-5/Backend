@@ -39,7 +39,7 @@ router.get("/:id/children", restricted(), async (req, res, next) => {
   }
 });
 
-// * Works Get children of user(parent)
+// * Works Add child
 router.post("/addChild", restricted(), async (req, res, next) => {
   const { child_name, users_id } = req.body;
   try {

@@ -27,7 +27,7 @@ router.get("/:id", restricted(), async (req, res, next) => {
   }
 });
 
-// Get All foods by Child ID
+// * WORKS Get All foods by Child ID
 router.get("/:id/food", restricted(), async (req, res, next) => {
   try {
     const { id } = req.params;
