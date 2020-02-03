@@ -6,7 +6,7 @@
 
 ---
 
-BASE URL: https://gigapet5.herokuapp.com/
+BASE URL: https://gigapetfive.herokuapp.com/
 
 ---
 
@@ -14,11 +14,11 @@ BASE URL: https://gigapet5.herokuapp.com/
 
 The following endpoints are available.
 
-- `GET https://gigapet5.herokuapp.com/auth/users` - gets master list of users(Restricted access)
-- `GET https://gigapet5.herokuapp.com/auth/users/:id` - gets a single user(Restricted access)
-- `GET https://gigapet5.herokuapp.com/auth/users/:id/children` - gets all the children for that user(Restricted access)
-- `GET https://gigapet5.herokuapp.com/auth/children` -gets all children in database(Restricted access)
-- `GET https://gigapet5.herokuapp.com/auth/children/:id` - Gets child by (child) id(Restricted access)
+- `GET https://gigapetfive.herokuapp.com/auth/users` - gets master list of users(Restricted access)
+- `GET https://gigapetfive.herokuapp.com/auth/users/:id` - gets a single user(Restricted access)
+- `GET https://gigapetfive.herokuapp.com/auth/users/:id/children` - gets all the children for that user(Restricted access)
+- `GET https://gigapetfive.herokuapp.com/auth/children` -gets all children in database(Restricted access)
+- `GET https://gigapetfive.herokuapp.com/auth/children/:id` - Gets child by (child) id(Restricted access)
 
 ---
 
@@ -26,7 +26,7 @@ The following endpoints are available.
 
 ### User Registration (POST)
 
-https://gigapet5.herokuapp.com/auth/register
+https://gigapetfive.herokuapp.com/auth/register
 
 ### Parameters
 
@@ -60,7 +60,7 @@ https://gigapet5.herokuapp.com/auth/register
 
 ### User Login (POST)
 
-https://gigapet5.herokuapp.com/auth/login
+https://gigapetfive.herokuapp.com/auth/login
 
 ### Parameters
 
@@ -89,7 +89,7 @@ https://gigapet5.herokuapp.com/auth/login
 
 ### ADD CHILD (POST) (Requires user Token)
 
-https://gigapet5.herokuapp.com/auth/users/addChild
+https://gigapetfive.herokuapp.com/auth/users/addChild
 
 ### Parameters
 
