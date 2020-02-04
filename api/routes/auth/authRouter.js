@@ -44,7 +44,7 @@ router.post("/login", async (req, res, next) => {
       const token = generateToken(user);
       res
         .status(200)
-        .json({ message: `Welcome ${user.name} to Gigpet`, token });
+        .json({ message: `Welcome ${user.name} to Gigpet`, token, user });
     } else {
       res.status(401).json({ message: "invalid credentials" });
     }
