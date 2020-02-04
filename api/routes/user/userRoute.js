@@ -28,7 +28,6 @@ router.get("/:id", async (req, res, next) => {
 });
 
 // * Works Get children of user(parent)
-// ! Tweak to add childs id
 router.get("/:id/children", async (req, res, next) => {
   try {
     const { id } = req.params;
