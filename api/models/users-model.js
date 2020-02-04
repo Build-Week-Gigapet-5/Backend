@@ -30,12 +30,12 @@ async function addUser(user) {
 
 function findChildrenByUserId(users_id) {
   return (
-    db("children as ch")
-      // .select("ch.id", "ch.child_name", "ch.child_age", "u.name", "u.id")
-      .fullJoin("users as u", "u.id", "ch.users_id")
+    db("users as u")
+      // .select("ch.id", "ch.child_name", "ch.child_age", "u.name")
+      .join("children as ch", "u.id", "ch.users_id")
       .where("ch.users_id", users_id)
-      .returning("*")
   );
+  // .returning("*")
 }
 
 module.exports = {
