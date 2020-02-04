@@ -23,20 +23,20 @@ router.get("/categories", async (req, res, next) => {
   }
 });
 
-// router.post("/addFood", restricted(), async (req, res, next) => {
-//   try {
-//     const { food_name, qty, date, children_id, category_id } = req.body;
-//     const newFood = await foodMod.addFood(req.body);
-//     res.status(201).json({
-//       message: `${food_name} added!`,
-//       newFood
-//     });
-//   } catch (err) {
-//     next(err);
-//   }
-// });
+router.post("/addFood", async (req, res, next) => {
+  try {
+    const { food_name, qty, date, children_id, category_id } = req.body;
+    const newFood = await foodMod.addFood(req.body);
+    res.status(201).json({
+      message: `${food_name} added!`,
+      newFood
+    });
+  } catch (err) {
+    next(err);
+  }
+});
 
-router.put("/:id", restricted(), async (req, res, next) => {
+router.put("/:id", async (req, res, next) => {
   try {
     const { id } = req.params;
     const edit = await foodMod.updateFood(id, req.body);
@@ -49,7 +49,7 @@ router.put("/:id", restricted(), async (req, res, next) => {
   }
 });
 
-router.delete("/:id", restricted(), async (req, res, next) => {
+router.delete("/:id", async (req, res, next) => {
   try {
     const { id } = req.params;
 
