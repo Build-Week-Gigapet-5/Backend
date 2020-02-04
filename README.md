@@ -100,6 +100,8 @@ https://gigapetfive.herokuapp.com/auth/login
 }
 ```
 
+---
+
 ### All Users (Parents) (GET) (Restricted Route)
 
 https://gigapetfive.herokuapp.com/auth/users
@@ -133,6 +135,8 @@ https://gigapetfive.herokuapp.com/auth/users
 
 ```
 
+---
+
 ### Get User(Parent) By ID (GET) (Restricted Route)
 
 https://gigapetfive.herokuapp.com/auth/users/:id (id is users id)
@@ -146,6 +150,8 @@ https://gigapetfive.herokuapp.com/auth/users/:id (id is users id)
     "email": "Jane@gmail.com"
 }
 ```
+
+---
 
 ### Get All Children by Users ID (GET) (Restricted Route)
 
@@ -205,6 +211,8 @@ https://gigapetfive.herokuapp.com/auth/users/:id/children (id is users id)
 ]
 ```
 
+---
+
 ### ADD CHILD (POST) (Restricted Route)
 
 https://gigapetfive.herokuapp.com/auth/users/addChild
@@ -238,6 +246,8 @@ https://gigapetfive.herokuapp.com/auth/users/addChild
 }
 
 ```
+
+---
 
 ### Get All Children (GET) (Restricted Route)
 
@@ -275,6 +285,8 @@ https://gigapetfive.herokuapp.com/auth/children
 ]
 ```
 
+---
+
 ### Get Child by ID (GET) (Restricted Route)
 
 https://gigapetfive.herokuapp.com/auth/children/:id (id is children_id)
@@ -289,6 +301,8 @@ https://gigapetfive.herokuapp.com/auth/children/:id (id is children_id)
     "users_id": 1
 }
 ```
+
+---
 
 ### ADD Food (POST) (Restricted Route)
 
@@ -328,6 +342,8 @@ https://gigapetfive.herokuapp.com/auth/food/addFood
 
 ```
 
+---
+
 ### EDIT Food (PUT) (Restricted Route)
 
 https://gigapetfive.herokuapp.com/auth/food/:id (Id is food id)
@@ -366,6 +382,8 @@ https://gigapetfive.herokuapp.com/auth/food/:id (Id is food id)
 
 ```
 
+---
+
 ### Remove Food (delete) (Restricted Route)
 
 https://gigapetfive.herokuapp.com/auth/food/:id (Id is food id)
@@ -379,6 +397,8 @@ https://gigapetfive.herokuapp.com/auth/food/:id (Id is food id)
 }
 
 ```
+
+---
 
 ### Get All Food (Restricted Route)
 
@@ -424,6 +444,8 @@ https://gigapetfive.herokuapp.com/auth/food
 
 ```
 
+---
+
 ### Get Food By Childs ID (GET) (Restricted Route)
 
 https://gigapetfive.herokuapp.com/auth/children/:id/food (Id is children_id)
@@ -460,6 +482,8 @@ https://gigapetfive.herokuapp.com/auth/children/:id/food (Id is children_id)
 ]
 
 ```
+
+---
 
 ### Get All Categories (GET)
 
