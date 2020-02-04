@@ -28,6 +28,7 @@ router.get("/:id", async (req, res, next) => {
 });
 
 // * Works Get children of user(parent)
+// ! Tweak to add childs id
 router.get("/:id/children", async (req, res, next) => {
   try {
     const { id } = req.params;
@@ -47,7 +48,7 @@ router.post("/addChild", async (req, res, next) => {
       res.status(400).json({ message: "Information is missing" });
     } else {
       const child = await childMod.addChild(req.body);
-      res.status(201).json({ message: `${child_name} has been added!` });
+      res.status(201).json({ message: `${child_name} has been added!`, child });
     }
   } catch (err) {
     next(err);
