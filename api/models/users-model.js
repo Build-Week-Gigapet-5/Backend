@@ -29,13 +29,10 @@ async function addUser(user) {
 }
 
 function findChildrenByUserId(users_id) {
-  return (
-    db("users as u")
-      // .select("ch.id", "ch.child_name", "ch.child_age", "u.name")
-      .join("children as ch", "u.id", "ch.users_id")
-      .where("ch.users_id", users_id)
-  );
-  // .returning("*")
+  return db("users as u")
+    .join("children as ch", "u.id", "ch.users_id")
+    .where("ch.users_id", users_id);
+  // .returning("*")  aslso removed select() But seems to work with empty select()
 }
 
 module.exports = {
