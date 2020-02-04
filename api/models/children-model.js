@@ -10,12 +10,18 @@ function findChildById(id) {
     .first();
 }
 
-function addChild(child, id) {
-  return db("children")
-    .insert(child)
-    .then(ids => {
-      ({ id: ids[0] });
-    });
+// function addChild(child, id) {
+//   return db("children")
+//     .insert(child)
+//     .then(ids => {
+//       ({ id: ids[0] });
+//     });
+// }
+
+async function addChild(child) {
+  const [id] = await db("children").insert(child);
+
+  return findChildById(id);
 }
 
 module.exports = { findChildren, findChildById, addChild };
