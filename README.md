@@ -23,16 +23,15 @@ The following endpoints are available (GET)
 - `GET https://gigapetfive.herokuapp.com/auth/food` - Gets all Food
 - `GET https://gigapetfive.herokuapp.com/auth/food/categories` - Gets all Categories
 
----
-
 The following endpoints are available (POST/PUT/DELETE)
-`POST https://gigapetfive.herokuapp.com/auth/register` - Register New User
-`POST https://gigapetfive.herokuapp.com/auth/login` - Login User
-`POST https://gigapetfive.herokuapp.com/auth/users/addChild` - Add Child
 
-`POST https://gigapetfive.herokuapp.com/auth/food/addFood` - Add Food
-`PUT https://gigapetfive.herokuapp.com/auth/food/:id` - Edit Food
-`DELETE https://gigapetfive.herokuapp.com/auth/food/:id` - Delete Food
+- `POST https://gigapetfive.herokuapp.com/auth/register` - Register New User
+- `POST https://gigapetfive.herokuapp.com/auth/login` - Login User
+- `POST https://gigapetfive.herokuapp.com/auth/users/addChild` - Add Child
+
+- `POST https://gigapetfive.herokuapp.com/auth/food/addFood` - Add Food
+- `PUT https://gigapetfive.herokuapp.com/auth/food/:id` - Edit Food
+- `DELETE https://gigapetfive.herokuapp.com/auth/food/:id` - Delete Food
 
 ---
 
