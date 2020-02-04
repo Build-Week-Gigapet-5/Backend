@@ -3,6 +3,7 @@ const foodMod = require("../../models/food-journal-model.js");
 const router = express.Router();
 const restricted = require("../../middleware/auth-user-middleware");
 
+// * Works Get all food
 router.get("/", async (req, res, next) => {
   try {
     const food = await foodMod.getAllFood();
@@ -13,6 +14,7 @@ router.get("/", async (req, res, next) => {
   }
 });
 
+// * Works get all categories
 router.get("/categories", async (req, res, next) => {
   try {
     const categories = await foodMod.getCategories();
@@ -23,20 +25,22 @@ router.get("/categories", async (req, res, next) => {
   }
 });
 
-// router.post("/addFood", restricted(), async (req, res, next) => {
-//   try {
-//     const { food_name, qty, date, children_id, category_id } = req.body;
-//     const newFood = await foodMod.addFood(req.body);
-//     res.status(201).json({
-//       message: `${food_name} added!`,
-//       newFood
-//     });
-//   } catch (err) {
-//     next(err);
-//   }
-// });
+// * Works Add food
+router.post("/addFood", async (req, res, next) => {
+  try {
+    const { food_name, qty, date, children_id, category_id } = req.body;
+    const newFood = await foodMod.addFood(req.body);
+    res.status(201).json({
+      message: `${food_name} added!`,
+      newFood
+    });
+  } catch (err) {
+    next(err);
+  }
+});
 
-router.put("/:id", restricted(), async (req, res, next) => {
+// * Works Update Food
+router.put("/:id", async (req, res, next) => {
   try {
     const { id } = req.params;
     const edit = await foodMod.updateFood(id, req.body);
@@ -49,7 +53,8 @@ router.put("/:id", restricted(), async (req, res, next) => {
   }
 });
 
-router.delete("/:id", restricted(), async (req, res, next) => {
+// * Works Delete food
+router.delete("/:id", async (req, res, next) => {
   try {
     const { id } = req.params;
 
