@@ -4,7 +4,7 @@ const router = express.Router();
 const userMod = require("../../models/users-model.js");
 const generateToken = require("./generateToken");
 
-// *Works Register new user
+// * Works Register new user
 router.post("/register", async (req, res, next) => {
   try {
     const user = await userMod.addUser(req.body);
