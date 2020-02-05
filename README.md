@@ -455,32 +455,87 @@ https://gigapetfive.herokuapp.com/auth/children/:id/food (Id is children_id)
 ```
 
 [
-{
-"id": 3,
-"food_name": "Chicken Nuggets",
-"qty": 1,
-"date": "2015-04-06T00:00:00.000Z",
-"children_id": 3,
-"category_id": 3
-},
-{
-"id": 4,
-"food_name": "Mac and Cheese",
-"qty": 1,
-"date": "2015-04-06T00:00:00.000Z",
-"children_id": 3,
-"category_id": 5
-},
-{
-"id": 6,
-"food_name": "Broccoli",
-"qty": 1,
-"date": "2015-08-07T00:00:00.000Z",
-"children_id": 3,
-"category_id": 1
-}
+    {
+        "id": 4,
+        "food_name": "Oatmeal",
+        "qty": 1,
+        "date": "2015-03-06T00:00:00.000Z",
+        "children_id": 1,
+        "category_id": 4,
+        "category_name": "Grains",
+        "category_points": 2
+    },
+    {
+        "id": 2,
+        "food_name": "Banana",
+        "qty": 1,
+        "date": "2015-03-07T00:00:00.000Z",
+        "children_id": 1,
+        "category_id": 2,
+        "category_name": "Fruits",
+        "category_points": 5
+    },
+    {
+        "id": 6,
+        "food_name": "Cinnamon roll",
+        "qty": 1,
+        "date": "2015-03-07T00:00:00.000Z",
+        "children_id": 1,
+        "category_id": 6,
+        "category_name": "Snacks",
+        "category_points": 0
+    },
+    {
+        "id": 6,
+        "food_name": "Cinnamon roll",
+        "qty": 1,
+        "date": "2015-03-07T00:00:00.000Z",
+        "children_id": 1,
+        "category_id": 6,
+        "category_name": "Snacks",
+        "category_points": 0
+    },
+    {
+        "id": 6,
+        "food_name": "Cinnamon roll",
+        "qty": 1,
+        "date": "2015-03-07T00:00:00.000Z",
+        "children_id": 1,
+        "category_id": 6,
+        "category_name": "Snacks",
+        "category_points": 0
+    },
+    {
+        "id": 3,
+        "food_name": "Grilled Chicken",
+        "qty": 1,
+        "date": "2016-03-06T00:00:00.000Z",
+        "children_id": 1,
+        "category_id": 3,
+        "category_name": "Protein",
+        "category_points": 2
+    },
+    {
+        "id": 6,
+        "food_name": "Cinnamon roll",
+        "qty": 1,
+        "date": "2015-03-07T00:00:00.000Z",
+        "children_id": 1,
+        "category_id": 6,
+        "category_name": "Snacks",
+        "category_points": 0
+    },
+    {
+        "id": 6,
+        "food_name": "Cinnamon bun",
+        "qty": 1,
+        "date": "2015-03-07T00:00:00.000Z",
+        "children_id": 1,
+        "category_id": 6,
+        "category_name": "Snacks",
+        "category_points": 0
+    }
 ]
-
 ```
 
 ---
