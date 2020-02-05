@@ -68,4 +68,14 @@ router.delete("/:id", async (req, res, next) => {
   }
 });
 
+router.get("/month", async (req, res, next) => {
+  try {
+    const dateRange = await foodMod.getCatByDate();
+    res.status(200).json(dateRange);
+    console.log("dateRange", dateRange);
+  } catch (err) {
+    next(err);
+  }
+});
+
 module.exports = router;

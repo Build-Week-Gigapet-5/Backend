@@ -9,6 +9,19 @@ describe("server test", () => {
   });
 });
 
+beforeEach(async done => {
+  let token;
+
+  const login = await supertest(server)
+    .post("/auth/login")
+    .send({
+      name: "Jane",
+      password: "abcde"
+    });
+  token = login.body.token;
+  done();
+});
+
 // * Pass
 // api/server/server.test.js
 //   server test
