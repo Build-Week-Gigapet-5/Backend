@@ -32,7 +32,6 @@ function findChildrenByUserId(users_id) {
   return db("users as u")
     .join("children as ch", "u.id", "ch.users_id")
     .where("ch.users_id", users_id);
-  // .returning("*")  aslso removed select() But seems to work with empty select()
 }
 
 module.exports = {

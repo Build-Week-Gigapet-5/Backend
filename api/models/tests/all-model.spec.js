@@ -4,9 +4,9 @@ const childMod = require("../children-model");
 const foodMod = require("../food-journal-model");
 
 // refreshes seeds before tests
-beforeEach(async () => {
-  await db.seed.run();
-});
+// beforeEach(async () => {
+//   await db.seed.run();
+// });
 
 describe("Users Model", () => {
   test("find", async () => {
@@ -78,35 +78,54 @@ describe("Food Model", () => {
   test("remove food", async () => {
     await foodMod.removeFood(1);
     const food = await foodMod.getAllFood();
-    expect(food.length).toBe(5);
+    expect(food.length).toBe(6);
   });
 });
 
 // * All tests pass
-// PASS  api/server/server.test.js
-// server test
-//   √ server route /  (19ms)
+// PASS  api/models/tests/all-model.spec.js
+// Users Model
+//   √ find (10ms)
+//   √ find By Id (2ms)
+//   √ Find Children By User ID (1ms)
+//   √ Add User (130ms)
+// Childrens Model
+//   √ find children (1ms)
+//   √ findChild By ID (1ms)
+//   √ Add Child (79ms)
+// Food Model
+//   √ find Food (1ms)
+//   √ Add Food (96ms)
+//   √ remove food (85ms)
 
 // console.log node_modules/knex/lib/logger.js:44
 //   .returning() is not supported by sqlite3 and will not have any effect.
 
-// PASS  api/models/tests/users-model.spec.js (19.497s)
-// Users Model
-//   √ find (1889ms)
-//   √ find By Id (1349ms)
-//   √ Find Children By User ID (1675ms)
-//   √ Add User (2044ms)
-// Childrens Model
-//   √ find children (1465ms)
-//   √ findChild By ID (1625ms)
-//   √ Add Child (2150ms)
-// Food Model
-//   √ find Food (1515ms)
-//   √ Add Food (1617ms)
-//   √ remove food (2117ms)
+// PASS  api/server/server.test.js
+// server test
+//   √ server route /  (18ms)
+// User Registration
+//   √ Should register with 201  (312ms)
+// User Login
+//   √ Should Login user  (10ms)
+// login failure
+//   √ should return 401 (4ms)
 
 // Test Suites: 2 passed, 2 total
-// Tests:       11 passed, 11 total
+// Tests:       14 passed, 14 total
+
+// PASS  api/server/server.test.js
+// server test
+//   √ server route /  (18ms)
+// User Registration
+//   √ Should register with 201  (312ms)
+// User Login
+//   √ Should Login user  (10ms)
+// login failure
+//   √ should return 401 (4ms)
+
+// Test Suites: 2 passed, 2 total
+// Tests:       14 passed, 14 total
 // Snapshots:   0 total
-// Time:        21.321s, estimated 26s
+// Time:        4.336s
 // Ran all test suites related to changed files.
