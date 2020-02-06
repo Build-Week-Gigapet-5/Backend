@@ -22,14 +22,18 @@ router.post("/register", async (req, res, next) => {
 router.post("/login", async (req, res, next) => {
   try {
     const { email, password } = req.body;
-    const user = await userMod.findBy({ email }).first();
-    if (user && bcrypt.compare(password, user.password)) {
-      const token = generateToken(user);
+    if (!email || !password) {
       res
-        .status(200)
-        .json({ message: `Welcome ${user.name} to Gigpet`, token, user });
+        .status(401)
+        .json({ message: "Email or Password incorrect or Missing" });
     } else {
-      res.status(401).json({ message: "invalid credentials" });
+      const user = await userMod.findBy({ email }).first();
+      if (user && bcrypt.compare(password, user.password)) {
+        const token = generateToken(user);
+        res
+          .status(200)
+          .json({ message: `Welcome ${user.name} to Gigpet`, token, user });
+      }
     }
   } catch (err) {
     console.log(err);
