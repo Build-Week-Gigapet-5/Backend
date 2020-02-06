@@ -4,14 +4,17 @@ const router = express.Router();
 const userMod = require("../../models/users-model.js");
 const generateToken = require("./generateToken");
 
-// *Works Register new user
+// * Works Register new user
 router.post("/register", async (req, res, next) => {
   try {
     const user = await userMod.addUser(req.body);
     res.status(201).json(user);
   } catch (err) {
-    console.log(err, "reg error");
-    next(err);
+    if (err.errno === 19) {
+      res.status(500).json({ message: "Email already exists" });
+    } else {
+      next(err);
+    }
   }
 });
 

@@ -6,26 +6,31 @@ describe("server test", () => {
     const res = await supertest(server).get("/");
     expect(res.status).toBe(200);
     expect(res.type).toBe("application/json");
-    // expect(res.body.message).toMatch("Welcome to Gigapet");
   });
 });
 
-// test results? 1 fail
+beforeEach(async done => {
+  let token;
 
-// PASS  api/server/server.test.js
-// server test
-//   √ server route /  (18ms)
+  const login = await supertest(server)
+    .post("/auth/login")
+    .send({
+      name: "Jane",
+      password: "abcde"
+    });
+  token = login.body.token;
+  done();
+});
 
-// Test Suites: 1 failed, 1 passed, 2 total
+// * Pass
+// api/server/server.test.js
+//   server test
+//     √ server route /  (18ms)
+
+// Test Suites: 1 passed, 1 total
 // Tests:       1 passed, 1 total
 // Snapshots:   0 total
-// Time:        2.364s, estimated 3s
+// Time:        2.957s, estimated 3s
 // Ran all test suites related to changed files.
 
-// Watch Usage
-// › Press a to run all tests.
-// › Press f to run only failed tests.
-// › Press p to filter by a filename regex pattern.
-// › Press t to filter by a test name regex pattern.
-// › Press q to quit watch mode.
-// › Press Enter to trigger a test run.
+// Watch Usage: Press w to show more.

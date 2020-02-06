@@ -13,7 +13,9 @@ function getAllFood() {
 }
 
 function getByChildId(id) {
-  return db("foods").where("children_id", id);
+  return db("foods as f")
+    .join("categories as c", "f.category_id", "c.id")
+    .where("children_id", id);
 }
 
 function findById(id) {
@@ -39,19 +41,12 @@ function getCategories() {
   return db("categories").select();
 }
 
-// ! Working on this one.
-function getCategoryByChildId(child_id) {
-  return db("foods as f")
-    .innerJoin("categories as c", "f.", "u.id")
-    .where({ users_id })
-    .select("ch.id", "ch.child_name", "ch.child_age", "u.name", "u.id");
-}
-
 module.exports = {
   addFood,
   getAllFood,
   getByChildId,
   updateFood,
   removeFood,
-  getCategories
+  getCategories,
+  findById
 };
