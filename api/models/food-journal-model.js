@@ -59,8 +59,9 @@ function getCategories() {
 //   return db("foods as f")
 //     .join("children as ch", "f.children_id", "ch.id")
 //     .join("categories as c", "f.category_id", "c.id")
-//     .whereBetween("f.date", [2015 - 03 - 06, 2015 - 03 - 07])
-//     .select("*");
+//     .query()
+//     .whereBetween("f.date", [2015 - 03 - 01, 2015 - 03 - 31])
+//     .select();
 // }
 
 // SELECT f.food_name, f.children_id, f.category_id, f.qty, f.date, c.category_name, ch.child_name
