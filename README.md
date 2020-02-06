@@ -21,6 +21,7 @@ The following endpoints are available (GET)
 - `GET https://gigapetfive.herokuapp.com/auth/children/:id` - Gets child by (child's) id
 
 - `GET https://gigapetfive.herokuapp.com/auth/food` - Gets all Food
+- `GET https://gigapetfive.herokuapp.com/auth/food/:id` - Get food by ID
 - `GET https://gigapetfive.herokuapp.com/auth/food/categories` - Gets all Categories
 
 The following endpoints are available (POST/PUT/DELETE)
@@ -441,6 +442,26 @@ https://gigapetfive.herokuapp.com/auth/food
         "category_id": 5
     }
 ]
+
+```
+
+---
+
+### Get Food by id (food id) (Restricted Route)
+
+https://gigapetfive.herokuapp.com/auth/food/:id
+
+##### Server returns:
+
+```
+{
+    "id": 5,
+    "food_name": "Grilled Chicken",
+    "qty": 1,
+    "date": "2016-03-06T00:00:00.000Z",
+    "children_id": 1,
+    "category_id": 3
+}
 
 ```
 
