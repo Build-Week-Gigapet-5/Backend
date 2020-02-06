@@ -14,6 +14,17 @@ router.get("/", async (req, res, next) => {
   }
 });
 
+router.get("/:id", async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const food = await foodMod.findById(id);
+    res.status(200).json(food);
+  } catch (err) {
+    console.log(err);
+    next();
+  }
+});
+
 // * Works get all categories
 router.get("/categories", async (req, res, next) => {
   try {
@@ -45,7 +56,7 @@ router.put("/:id", restricted(), async (req, res, next) => {
     const { id } = req.params;
     const edit = await foodMod.updateFood(id, req.body);
     res.status(201).json({
-      message: "Food record Updated"
+      message: `${req.body.food_name} updated!`
     });
   } catch (err) {
     console.log("edit food", err);
@@ -67,15 +78,5 @@ router.delete("/:id", restricted(), async (req, res, next) => {
     next(err);
   }
 });
-
-// router.get("/categories/month", async (req, res, next) => {
-//   try {
-//     const dateRange = await foodMod.getCatByDate();
-//     res.status(200).json(dateRange);
-//     console.log("dateRange", dateRange);
-//   } catch (err) {
-//     next(err);
-//   }
-// });
 
 module.exports = router;

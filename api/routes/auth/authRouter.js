@@ -10,8 +10,11 @@ router.post("/register", async (req, res, next) => {
     const user = await userMod.addUser(req.body);
     res.status(201).json(user);
   } catch (err) {
-    console.log(err, "reg error");
-    next(err);
+    if (err.errno === 19) {
+      res.status(500).json({ message: "Email already exists" });
+    } else {
+      next(err);
+    }
   }
 });
 
